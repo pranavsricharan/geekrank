@@ -24,9 +24,12 @@ class ExecuteCode(Resource):
                     f.write(request.form['script'])
 
                 # Extract test cases
-                challenge_tests_path = temp_dir + '/challenge'
-                challenge_file = ZipFile(request.files['tests'])
-                challenge_file.extractall(challenge_tests_path)
+                try:
+                    challenge_tests_path = temp_dir + '/challenge'
+                    challenge_file = ZipFile(request.files['tests'])
+                    challenge_file.extractall(challenge_tests_path)
+                except KeyError:
+                    return {'error': 'Challenge test cases are required'}
 
                 # Run the tests and generate response
                 for k, v in executor.run_test_suite(challenge_tests_path, script_file_path).items():
@@ -42,8 +45,6 @@ class ExecuteCode(Resource):
         except FileNotFoundError:
             return {'error': 'Invalid Challenge ID'}
         except KeyError:
-            import traceback
-            traceback.print_exc()
             return {'error': 'User script is required'}
 
         return {'challengeResults': results}
