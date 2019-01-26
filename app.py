@@ -23,6 +23,9 @@ class ExecuteCode(Resource):
                 with open(script_file_path, 'w') as f:
                     f.write(request.form['script'])
 
+                language = request.form.get('language') or 'PYTHON'
+                print(language)
+
                 # Extract test cases
                 try:
                     challenge_tests_path = temp_dir + '/challenge'
@@ -32,7 +35,7 @@ class ExecuteCode(Resource):
                     return {'error': 'Challenge test cases are required'}
 
                 # Run the tests and generate response
-                for k, v in executor.run_test_suite(challenge_tests_path, script_file_path).items():
+                for k, v in executor.run_test_suite(challenge_tests_path, script_file_path, language).items():
                     result = {
                         'testCaseNumber': k,
                         'success': v == 'PASS'
