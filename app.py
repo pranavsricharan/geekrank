@@ -10,9 +10,9 @@ app = Flask(__name__)
 api = Api(app)
 
 
-@api.route('/execute/<int:challenge_id>')
+@api.route('/execute')
 class ExecuteCode(Resource):
-    def post(self, challenge_id):
+    def post(self):
         try:
             results = []
 

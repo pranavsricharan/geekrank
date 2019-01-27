@@ -22,6 +22,7 @@ def get_result(out: str, dirname: str) -> str:
     elif output == expected:
         return 'PASS'
     elif len(errors.strip()) > 0:
+        print(errors)
         return 'ERROR'
     else:
         return 'FAIL'
