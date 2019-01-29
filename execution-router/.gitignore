@@ -1,0 +1,5 @@
+.vscode/
+*.py[co]
+CRON
+CRON_ERROR
+CRON_output

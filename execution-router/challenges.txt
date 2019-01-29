@@ -1,0 +1,49 @@
+Sum of numbers [Easy]:
+Given a list of numbers, find the sum of them.
+
+Input format:
+    First line T contains the number of sets of inputs
+    The next T sets contain
+        A number N denoting the length of the array
+        The array elements (space separated)
+
+Output format:
+    For each set of input print the set number (starting with 1) and the sum of the elements separated by a space in a new line
+
+
+----------------------------------------------
+Min Max [Easy]:
+Given an array of numbers, find the minimum and maximum elements.
+
+Input format:
+    First line T contains the number of sets of inputs
+    The next T sets contain
+        A number N denoting the length of the array
+        The array elements (space separated)
+
+Output format:
+    For each set of input print the minumum and maximum value separated by a space in a new line
+
+
+-----------------------------------------------
+Toffee Exchange [Easy]:
+Jughead goes to a shop to buy toffee. Each toffee costs Rs. 1. Since it's a special day in the shop, they decide to give 1 toffee free for every 3 toffee wrappers returned. Calculate the total number of toffees Jughead can buy this way if he eats all the toffees as soon as he buys it.
+
+Input format:
+    First line contains the initial amount Jughead has
+
+Output format:
+    Print the number of toffees he gets
+
+
+-------------------------------------------------------
+Odd-Even Rows [Easy]:
+You are given an array of integers. You need to print the odd and even numbers in sorted order.
+
+Input format:
+    First line N contains the size of the array
+    The next line contains N space separated integers
+
+Output format:
+    The first line with all odd numbers in sorted order, separated by a space
+    The second line with all even numbers in sorted order, separated by a space
